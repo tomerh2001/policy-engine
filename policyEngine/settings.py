@@ -81,10 +81,10 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': '123456789',
-        'HOST': '34.66.92.77',
+        'HOST': '10.30.176.3',
         'PORT': '5432',
         'OPTIONS': {
-            'sslmode': 'verify-ca', #leave this line intact
+            'sslmode': 'verify-ca',
             'sslrootcert': './Google Keys/server-ca.pem',
             "sslcert": "./Google Keys/client-cert.pem",
             "sslkey": "./Google Keys/client-key.pem",
