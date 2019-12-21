@@ -21,5 +21,3 @@ urllib3==1.25.2
 pipenv
 
 psycopg2-binary
-
-psycopg2
