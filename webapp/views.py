@@ -32,8 +32,12 @@ def get_rules(request):
         except:
             rules = paginator.page(paginator.num_pages)
 
+        # Parse the paged rules to a proper format
+        rules = [{'uid':rule.uid, 'maxAmount': rule.maxAmount, 'destinations': rule.destinations} for rule in rules]
+
         # Serialize the received rules into JSON format
-        rules_json = serialize('json', list(rules))
+        rules_json = json.dumps(rules)
+       
         # Return a JSON response contained with the serialized data
         return JsonResponse(rules_json, safe=False)
     except ValueError as e:
@@ -51,7 +55,7 @@ def add_rule(request, maxAmount, destinations, amountInUsd=False):
             usd = float(requests.get('https://blockchain.info/tobtc?currency=USD&value=1').text)
 
             # Set the correct value for the amount
-            maxAmount = usd * maxAmount
+            maxAmount = usd * maxAmount / 10e7
 
         # Check if the specified rule already exists
         if any(PolicyRule.objects.filter(maxAmount=maxAmount, destinations=destinations)):

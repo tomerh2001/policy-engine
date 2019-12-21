@@ -78,18 +78,18 @@ WSGI_APPLICATION = 'policyEngine.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
+        'NAME': 'django',
         'USER': 'postgres',
         'PASSWORD': '123456789',
         'HOST': '10.30.176.3',
         'PORT': '5432',
-        # 'OPTIONS': {
-        #     'sslmode': 'verify-ca',
-        #     'sslrootcert': './Google Keys/server-ca.pem',
-        #     "sslcert": "./Google Keys/client-cert.pem",
-        #     "sslkey": "./Google Keys/client-key.pem",
-        # }
-    }
+        'OPTIONS': {
+            'sslmode': 'verify-ca',
+            'sslrootcert': './Google Keys/server-ca.pem',
+            "sslcert": "./Google Keys/client-cert.pem",
+            "sslkey": "./Google Keys/client-key.pem",
+        }
+    },
 }
 
 
