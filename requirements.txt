@@ -19,5 +19,3 @@ sqlparse==0.3.0
 urllib3==1.25.2
 
 pipenv
-
-psycopg2
