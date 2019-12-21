@@ -87,7 +87,7 @@ DATABASES = {
             'sslmode': 'verify-ca',
             'sslrootcert': './Google Keys/server-ca.pem',
             "sslcert": "./Google Keys/client-cert.pem",
-            # "sslkey": "./Google Keys/client-key.pem",
+            "sslkey": "./Google Keys/client-key.pem",
         }
     }
 }
