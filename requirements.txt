@@ -1,4 +1,4 @@
-Django==2.1
+Django==3.2.14
 
 certifi==2019.3.9
 
